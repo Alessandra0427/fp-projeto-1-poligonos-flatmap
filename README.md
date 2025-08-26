@@ -33,18 +33,18 @@ No Linux/macOS:
  ./mvnw javafx:run
 ```
 
-Ao iniciar, você verá uma tela como abaixo, onde são desenhados vários polígonos a partir de uma lista de pontos (coordenadas x,y), definidas no atributo `pontosPoligonos` da classe  [PoligonosApp](src/main/java/com/example/PoligonosApp.java).
+Ao iniciar, você verá uma tela como abaixo, onde são desenhados vários polígonos a partir de uma lista de pontos (coordenadas x,y), definidas no atributo `pontosPoligonos` da classe [PoligonosApp](src/main/java/com/example/PoligonosApp.java).
 
 ## 4. Tarefas a serem implementadas
 
-Sua tarefa principal é implementar as funções para:
+Suas tarefas são:
 
-- calcular o perímetro (soma da distância entre todos os pontos) de um polígono;
-- indicar qual o tipo de cada polígono (quadrilátero, triângulo, pentágono, etc).
+1. Analisar o método `start` da classe [PoligonosApp](src/main/java/com/example/PoligonosApp.java), verificar que recursos de programação funcional podem ser usados nele e fazer as devidas alterações. O que poderia ser melhorado no código de tal método? Faça tais alterações.
+2. Calcular o perímetro (soma da distância entre todos os pontos) de um polígono.
+3. Indicar qual o tipo de cada polígono (quadrilátero, triângulo, pentágono, etc).
 
 ![Tela inicial](screenshot.jpg)
 
-Por fim, você deve analisar o método `start` da classe [PoligonosApp](src/main/java/com/example/PoligonosApp.java), verificar que recursos de programação funcional podem ser usados nele e fazer as devidas alterações. O que poderia ser melhorado no código de tal método? Faça tais alterações.
 
 ## 5. Testando sua implementação das funções
 

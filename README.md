@@ -13,7 +13,7 @@ Você deve criar uma cópia deste repositório clicando no botão "Fork" no cant
 
 ## 2. Pré-requisitos para rodar o projeto
 
-Você precisa ter o JDK 17 ou superior para compilar e executar a aplicação.
+Você precisa ter o JDK 21 ou superior para compilar e executar a aplicação.
 
 ## 3. Rodando o projeto
 

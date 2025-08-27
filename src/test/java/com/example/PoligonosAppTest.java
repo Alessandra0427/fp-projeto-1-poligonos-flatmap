@@ -1,12 +1,15 @@
 package com.example;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
 
+import static java.util.stream.IntStream.range;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Testes unitários para a classe {@link PoligonosApp},
@@ -23,9 +26,11 @@ class PoligonosAppTest {
         final List<Double> expected = List.of(400.0, 500.0, 323.0, 341.0, 382.0);
         final List<Double> perimetros = app.perimetros();
         assertThat(perimetros).isNotEmpty();
-        for (int i = 0; i < perimetros.size(); i++) {
-            assertEquals(expected.get(i), perimetros.get(i), delta, "Perímetro do polígono %d incorreto".formatted(i));
-        }
+
+        final var msg = "Perímetro do polígono %d incorreto";
+        final Consumer<Integer> tester = i -> assertEquals(expected.get(i), perimetros.get(i), delta, msg.formatted(i));
+        final Stream<Executable> executables= range(0, perimetros.size()).mapToObj(i -> () -> tester.accept(i));
+        assertAll(executables);
     }
 
     @Test

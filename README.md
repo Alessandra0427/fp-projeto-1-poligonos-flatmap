@@ -45,7 +45,6 @@ Suas tarefas são:
 
 ![Tela inicial](screenshot.jpg)
 
-
 ## 5. Testando sua implementação das funções
 
 Para confirmar que você implementou todas as tarefas e fez como deveria, execute os testes por meio do seu IDE. No IntelliJ, por exemplo, você pode clicar com o botão direito no nome do projeto na barra lateral esquerda e escolher "Run All Tests".

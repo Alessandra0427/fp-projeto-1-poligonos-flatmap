@@ -13,31 +13,36 @@ import java.util.List;
 public class PoligonosApp extends Application {
 
     private final List<List<Point>> pontosPoligonos = List.of(
-        List.of( // Quadrado
+        // Quadrado
+        List.of(
             new Point(50, 50),
             new Point(150, 50),
             new Point(150, 150),
             new Point(50, 150)
         ),
-        List.of( // Retângulo
+        // Retângulo
+        List.of(
             new Point(200, 50),
             new Point(400, 50),
             new Point(400, 100),
             new Point(200, 100)
         ),
-        List.of( // Triângulo
+        // Triângulo
+        List.of(
             new Point(300, 250),
             new Point(350, 150),
             new Point(400, 250)
         ),
-        List.of( // Pentágono
+        // Pentágono
+        List.of(
             new Point(200, 250),
             new Point(250, 300),
             new Point(250, 350),
             new Point(150, 350),
             new Point(150, 300)
         ),
-        List.of( // Hexágono
+        // Hexágono
+        List.of(
             new Point(320, 270),
             new Point(370, 320),
             new Point(370, 370),
@@ -101,6 +106,7 @@ public class PoligonosApp extends Application {
                 .map(pontos -> {
                     Point primeiro = pontos.get(0);
                     Point ultimo = pontos.get(pontos.size() - 1);
+
                     Point pontoFinal = pontos.stream()
                             .reduce(ultimo, (pAnterior, pAtual) -> new Point(pAnterior, pAtual));
 
@@ -109,3 +115,4 @@ public class PoligonosApp extends Application {
                 .toList();
     }
 }
+

@@ -101,8 +101,6 @@ public class PoligonosApp extends Application {
                 .map(pontos -> {
                     Point primeiro = pontos.get(0);
                     Point ultimo = pontos.get(pontos.size() - 1);
-
-                    // Usa reduce para somar distâncias entre pontos consecutivos
                     Point pontoFinal = pontos.stream()
                             .reduce(ultimo, (pAnterior, pAtual) -> new Point(pAnterior, pAtual));
 

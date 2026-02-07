@@ -102,17 +102,13 @@ public class PoligonosApp extends Application {
     }
 
     protected List<Double> perimetros() {
-        return pontosPoligonos.stream()
-                .map(pontos -> {
-                    Point primeiro = pontos.get(0);
-                    Point ultimo = pontos.get(pontos.size() - 1);
-
-                    Point pontoFinal = pontos.stream()
-                            .reduce(ultimo, (pAnterior, pAtual) -> new Point(pAnterior, pAtual));
-
-                    return pontoFinal.distance() + new Point(pontoFinal, primeiro).distance();
-                })
-                .toList();
-    }
+    return pontosPoligonos.stream()
+        .map(pontos -> {
+            var ultimo = pontos.getLast();
+            var pontoFinal = pontos.stream()
+                .reduce(ultimo, (pAnterior, pAtual) -> new Point(pAnterior, pAtual));
+            return pontoFinal.distance();
+        })
+        .toList();
 }
 
